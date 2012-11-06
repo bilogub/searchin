@@ -4,7 +4,7 @@ SearchIn is a jQuery-based auto-complete plugin aimed to combine user input with
 
 It works like jquery.ui.autocomplete or bootstrap.typeahead but it's standalone and relies only on jQuery.
 
-It's better [to see with own eyes](http://jsfiddle.net/wYFU4/1/) :)
+It's better [to see with own eyes](http://jsfiddle.net/wYFU4/3/) :)
 
 SearchIn works as follows:
 
