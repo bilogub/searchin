@@ -1,7 +1,7 @@
 
 /*
  jquery.searchin.js v1.0.0
- https://github.com/belogub/searchin
+ http://belogub.github.com/searchin/
 
  MIT License
  Copyright (c) 2012 Yuri Belogub
