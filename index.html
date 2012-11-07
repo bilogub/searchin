@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="assets/ico/favicon.ico" rel="shortcut icon">
+  <meta charset="utf-8">
+  <title>SearchIn jQuery autocomplete plugin</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Yuri Belogub" name="author">
+  <meta content="SearchIn jQuery autocomplete plugin" name="description">
+
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/jquery.searchin/css/jquery.searchin.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/assets/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="assets/jquery.searchin/js/jquery.searchin.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36150273-1']);
+    _gaq.push(['_setDomainName', 'github.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body>
+<a href="https://github.com/belogub/searchin">
+  <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+</a>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="brand" title="SearchIn autocomplete jQuery plugin">SearchIn</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active">
+            <a href="/"><i class="icon-home"></i>&nbsp;HOME</a>
+          </li>
+          <li class="">
+            <a href="https://github.com/belogub/searchin/zipball/master">
+              <i class="icon-download"></i>&nbsp;ZIP
+            </a>
+          </li>
+          <li class="">
+            <a href="https://github.com/belogub/searchin/tarball/master">
+              <i class="icon-download-alt"></i>&nbsp;TAR
+            </a>
+          </li>
+          <li class="">
+            <a href=https://github.com/belogub/searchin>View on GitHub</a>
+          </li>
+          <li class="">
+            <a href="https://github.com/belogub/searchin/issues/new">
+              <i class="icon-plus"></i>&nbsp;Add an Issue
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span4">
+      <h3>About</h3>
+      <small>
+        SearchIn is a jQuery-based auto-complete plugin aimed to combine user input with data search it was initialized
+        with. It works like jquery.ui.autocomplete or bootstrap.typeahead but it's standalone and relies only on jQuery.
+        See it in action:
+      </small>
+      <p class="well">
+        <label for="my-id" class="inline">Start with "g"
+          <select data-searchin="searchin" id="my-id">
+            <option value="5">Cat</option>
+            <option value="6">Goose</option>
+            <option value="7">Pig</option>
+            <option value="8">Dog</option>
+          </select>
+        </label>
+      </p>
+    </div>
+
+    <div class="span8">
+      <h3>SearchIn</h3>
+      <small>
+        SearchIn is a jQuery-based auto-complete plugin aimed to combine user input with data search it was initialized with.
+        It works like jquery.ui.autocomplete or bootstrap.typeahead but it's standalone and relies only on jQuery.
+
+
+
+
+        SearchIn works as follows:
+        <ol>
+          <li>You need to include jQuery on your page</li>
+          <li>Also include jquery.searchin.js and jquery.searchin.css</li>
+          <li>Then add HTML code with
+            <code>&lt;select&gt;</code> tag:</li>
+        </ol>
+
+        <pre>
+          &lt;select data-searchin="searchin" id="my-id"&gt;
+            &lt;option value="5">Cat&lt;/option&gt;
+            &lt;option value="6">Goose&lt;/option&gt;
+            &lt;option value="7">Pig&lt;/option&gt;
+            &lt;option value="8">Dog&lt;/option&gt;
+          &lt;/select&gt;</pre>
+
+        SearchIn will automatically search for <code>&lt;select&gt;</code> with attribute
+        <code>data-searchin="searchin"</code> and transform it to <code>&lt;input&gt;</code> with searchin class and
+        attribute data-value which will hold the value that corresponds to <code>&lt;option&gt;</code>'s value of
+        <code>&lt;select&gt;</code> control after the user selects one and id attribute searchin- + id of
+        <code>&lt;select&gt;</code> e.g. if you set the <code>&lt;select id="my-select"&gt;</code> then <code>&lt;input&gt;</code>
+        will have <code>id="seachin-my-select"</code> with the help of it you can get current text value and the value
+        itself from <code>data-value</code> attribute:
+        <pre>
+          var text = $('input#searchin-my-select').val();
+          var value = $('input#searchin-my-select').data('value');</pre>
+          Also you can initialize SearchIn from your javascript code:
+        <pre>
+          $('select.some-select').searchin();
+
+          // or with chaining
+          $('select.some-select').searchin().val('Your Country');</pre>
+        <h3>Tests</h3>
+        Tests were written with Jasmine testing framework and reside in spec folder.
+        To run tests you need to open spec/specrunner.html file in your browser.
+        If you found a bug please <a href="https://github.com/belogub/searchin/issues/new">create an issue</a>.
+        <h3>License</h3>
+        <p>MIT License</p>
+        <p>Copyright (c) 2012 Yuri Belogub</p>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+        <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </small>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
