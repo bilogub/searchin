@@ -31,6 +31,11 @@ describe("jQuery.SearchIn", function() {
     expect($('ul.searchin-list')).toBeHidden();
   });
 
+  it("should normally react on regexp symbols when matching the input", function() {
+    $input = $('input.searchin');
+    expect(function() {$input.val("*").data('searchin').refine(); }).not.toThrow();
+  });
+
   describe("Mouse events", function() {
 
     beforeEach(function() {

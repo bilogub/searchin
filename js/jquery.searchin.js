@@ -38,7 +38,7 @@ SearchIn.prototype = {
 
   refine: function() {
     var self = this;
-    var re = new RegExp(this.input.val(), 'i');
+    var re = new RegExp(this.input.val().replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"), 'i');
     var refined = $.grep(this.items, function(item) {
       var $item = $(item);
       var matched = !!$item.text().match(re);
