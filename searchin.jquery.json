@@ -1,0 +1,29 @@
+{
+  "name": "searchin",
+  "title": "SearchIn autocomplete from Select Tag",
+  "description": "jQuery plugin that transforms <select> HTML tag to autocomplete input field",
+  "keywords": [
+    "autocomplete",
+    "quick-search",
+    "search-as-you-type",
+    "type-ahead"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Yuriy Bilogub",
+    "url": "https://github.com/bilogub"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/bilogub/searchin/blob/master/LICENSE"
+    }
+  ],
+  "bugs": "https://github.com/bilogub/searchin/issues",
+  "homepage": "http://bilogub.github.com/searchin/",
+  "docs": "http://bilogub.github.com/searchin/",
+  "download": "https://github.com/bilogub/searchin/archive/master.zip",
+  "dependencies": {
+    "jquery": ">=1.7"
+  }
+}

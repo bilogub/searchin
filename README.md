@@ -1,8 +1,6 @@
 About
 ----
-SearchIn is a jQuery-based auto-complete plugin aimed to combine user input with data search it was initialized with.
-
-It works like jquery.ui.autocomplete or bootstrap.typeahead but it's standalone and relies only on jQuery.
+SearchIn - jQuery autocomplete plugin that transforms your HTML select list to autocomplete field.
 
 It's better [to see with own eyes](http://belogub.github.com/searchin/) :)
 
@@ -59,7 +57,7 @@ License
 -----
 MIT License
 
-Copyright (c) 2012 Yuri Belogub
+Copyright (c) 2013 Yuriy Bilogub
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
