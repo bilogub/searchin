@@ -2,7 +2,7 @@ About
 ----
 SearchIn - jQuery autocomplete plugin that transforms your HTML select list to autocomplete field.
 
-It's better [to see with own eyes](http://belogub.github.com/searchin/) :)
+It's better [to see with own eyes](http://bilogub.github.com/searchin/) :)
 
 SearchIn works as follows:
 
@@ -51,7 +51,7 @@ Tests were written with [Jasmine testing framework](http://pivotal.github.com/ja
 
 To run tests you need to open `spec/specrunner.html` file in your browser.
 
-If you found a bug please [create an issue](https://github.com/belogub/searchin/issues/new)
+If you found a bug please [create an issue](https://github.com/bilogub/searchin/issues/new)
 
 License
 -----
