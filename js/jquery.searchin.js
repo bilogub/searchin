@@ -52,24 +52,28 @@ SearchIn.prototype = {
     return this.list.find('li.active:visible')[0];
   },
 
-  first: function() {
-    return this.list.find('li:visible:first')[0];
+  first: function(visible) {
+    visible = visible ? 'visible:' : '';
+    return this.list.find('li:' + visible + 'first')[0];
   },
 
-  last: function() {
-    return this.list.find('li:visible:last')[0];
+  last: function(visible) {
+    visible = visible ? 'visible:' : '';
+    return this.list.find('li:' + visible + 'last')[0];
   },
 
   prev: function($active) {
-    var $prev = $($active.prev()[0]);
-    if (!$prev || !$prev.is(':visible')) return;
-    return $prev;
+    if (this.first() == $active.get(0)) return;
+    var $prev = $active.prev();
+    if (!$prev) return;
+    return ($prev.is(':visible')) ? $prev : this.prev($prev);
   },
 
   next: function($active) {
-    var $next = $($active.next()[0]);
-    if (!$next || !$next.is(':visible')) return;
-    return $next;
+    if (this.last() == $active.get(0)) return;
+    var $next = $active.next();
+    if (!$next) return;
+    return ($next.is(':visible')) ? $next : this.next($next);
   },
 
   activate: function(item) {
@@ -83,7 +87,7 @@ SearchIn.prototype = {
   toPrevious: function() {
     var active = this.active();
     if (!active) {
-      this.activate(this.last());
+      this.activate(this.last('visible'));
     } else {
       var $active = $(active), previous = null;
       if (previous = this.prev($active)) {
@@ -96,7 +100,7 @@ SearchIn.prototype = {
   toNext: function() {
     var active = this.active();
     if (!active) {
-      this.activate(this.first());
+      this.activate(this.first('visible'));
     } else {
       var $active = $(active), next = null;
       if (next = this.next($active)) {
