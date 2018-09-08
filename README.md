@@ -47,7 +47,7 @@ $('select.some-select').searchin().val('Your Country');
 
 Tests
 -----
-Tests were written with [Jasmine testing framework](http://pivotal.github.com/jasmine/) and reside in `spec` folder.
+Tests were written with [Jasmine testing framework](https://jasmine.github.io/) and reside in `spec` folder.
 
 To run tests you need to open `spec/specrunner.html` file in your Firefox browser([Chrome isn't supported](https://github.com/velesin/jasmine-jquery#cross-domain-policy-problems-under-chrome)).
 
